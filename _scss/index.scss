@@ -1,0 +1,41 @@
+/*=============================
+=            GLOBALS            =
+=============================*/
+
+@import "global";
+
+/*=====  End of GLOBALS  ======*/
+
+/*=======================================
+=            HEADER & FOOTER            =
+=======================================*/
+
+/*=====  End of HEADER & FOOTER  ======*/
+
+/** THE BODY ===========================  */
+ul,
+menu,
+dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px !important;
+}
+
+.table {
+  th {
+    color: white;
+    width: 25%;
+  }
+  td {
+    color: white;
+    width: 25%;
+  }
+}
+.error {
+  background-color: darkred;
+  color: white;
+}
