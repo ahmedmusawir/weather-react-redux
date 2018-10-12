@@ -35,7 +35,7 @@ export class WeatherList extends Component {
       };
 
       return (
-        <tr key={name}>
+        <tr key={name} className="animated slideInLeft">
           {/* <td>
             {name} {lon} {lat}
           </td> */}
