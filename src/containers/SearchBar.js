@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
 
 export class SearchBar extends Component {
-  // static propTypes = {
-  //   searchText: PropTypes.string.isRequired,
-  // };
+  static propTypes = {
+    fetchWeather: PropTypes.func.isRequired,
+  };
 
   constructor(props) {
     super(props);
@@ -33,13 +33,13 @@ export class SearchBar extends Component {
           <input
             type="text"
             onChange={this.onInputChange}
-            placeholder="Get a five-day forecast in your favourite cities"
+            placeholder="Type your favorite city name... example: atlanta"
             className="form-control search-bar"
             value={this.state.term}
           />
           <span className="input-group-btn">
             <button type="submit" className="btn btn-secondary">
-              Click Me
+              Get Weather
             </button>
           </span>
         </form>

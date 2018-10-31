@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Chart from '../components/Chart';
 import DefaultImage from '../default-image.png';
 import GoogleMap from '../components/MyGoogleMap';
+import { withState } from 'recompose';
 
 export class WeatherList extends Component {
-  static propTypes = {};
+  static propTypes = {
+    weather: PropTypes.array.isRequired,
+  };
 
   renderWeather = (cityData) => {
     if (cityData === undefined) {
@@ -36,9 +39,6 @@ export class WeatherList extends Component {
 
       return (
         <tr key={name} className="animated slideInLeft">
-          {/* <td>
-            {name} {lon} {lat}
-          </td> */}
           <td>
             <GoogleMap center={center} zoom={12} />
           </td>
@@ -57,7 +57,9 @@ export class WeatherList extends Component {
   };
 
   render() {
-    // console.log(`WeatherList Render ${this.props.weather[0]}`);
+    const textColor = {
+      color: '#e3e3e3',
+    };
     return (
       <div>
         <table className="table table-hover">
@@ -71,6 +73,11 @@ export class WeatherList extends Component {
           </thead>
           <tbody>{this.props.weather.map(this.renderWeather)}</tbody>
         </table>
+        <h5 style={textColor}>
+          The following is a demo result of the 5 day weather forecast of Atlanta city. Type your
+          favorite city name above and click the 'Get Weather' button to get similar weather
+          forecast.
+        </h5>
         <figure>
           <img src={DefaultImage} alt="" />
         </figure>
