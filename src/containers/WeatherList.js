@@ -4,19 +4,15 @@ import PropTypes from 'prop-types';
 import Chart from '../components/Chart';
 import DefaultImage from '../default-image.png';
 import GoogleMap from '../components/MyGoogleMap';
-import { withState } from 'recompose';
 
 export class WeatherList extends Component {
   static propTypes = {
     weather: PropTypes.array.isRequired,
   };
 
-  renderWeather = (cityData) => {
+  renderWeather = (cityData, index) => {
+    console.log(index);
     if (cityData === undefined) {
-      //inline style, not used
-      const errorStyle = {
-        width: '100%',
-      };
       return (
         <tr className="error" role="alert">
           <td>No Data Found... Plz check the City Name spelling and try again.</td>

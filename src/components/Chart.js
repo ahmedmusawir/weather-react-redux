@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Sparklines, SparklinesLine, SparklinesReferenceLine } from 'react-sparklines';
 import _ from 'lodash';
 
@@ -22,6 +22,10 @@ const Chart = (props) => {
   );
 };
 
-Chart.propTypes = {};
+Chart.propTypes = {
+  data: PropTypes.array.isRequired,
+  color: PropTypes.string.isRequired,
+  units: PropTypes.string.isRequired,
+};
 
 export default Chart;
